@@ -3,9 +3,9 @@
 SELECT artist_lastfm, scrobbles_lastfm 
 FROM artists 
 ORDER BY scrobbles_lastfm DESC 
-LIMIT 1![]
+LIMIT 1!
 ~~~
-![](max scrobbles.jpg)
+![](max_scrobbles.jpg)
 ### b) Самый популярный тэг на ластфм
 ~~~
 CREATE VIEW tag_counter (tag, counter) 
@@ -19,7 +19,7 @@ SELECT * FROM tag_counter
 ORDER BY counter DESC
 LIMIT 1
 ~~~
-![](tag counter.jpg)
+![](tag_counter.jpg)
 ### c) Самые популярные исполнители 10 самых популярных тегов ластфм
 ~~~
 CREATE VIEW top10_tags (tag, counter) AS 
@@ -43,7 +43,7 @@ GROUP BY a.artist, a.scrobbles
 ORDER BY a.scrobbles DESC
 LIMIT 10;
 ~~~
-![](top artists with top tags.jpg)
+![](top_artists_with_top_tags.jpg)
 ### d) Любой другой инсайт на ваше усмотрение
 ### Топ 10 стран по кол-ву исполнителей
 ~~~
@@ -55,4 +55,4 @@ HAVING country_lastfm != ""
 ORDER BY cnt 
 DESC LIMIT 10
 ~~~
-![](top contries.jpg)
+![](top_contries.jpg)
